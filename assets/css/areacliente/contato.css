@@ -1,0 +1,239 @@
+.contenet-contato{
+padding: 15px 15px;
+width: 100%;}
+
+.contener-inputs{width: 100%;
+}
+
+.contener-inputs input {width: 100%;
+    background-color: #ffffff00;
+    border: none;
+    border-bottom: 1px solid #fe9000ce;
+    padding: 10px 15px;
+    margin-bottom: 20px;
+    transition-duration: 0.2s;
+    border-radius: 0px;}
+
+
+
+
+    @media screen and (max-width: 1680px)  
+
+{
+    .contener-pai{
+
+        max-width: 80%;
+        width: 80%;
+        margin-left: 11%;
+        margin-top: 5%;}
+
+}
+
+
+
+@media screen and (max-width: 1440px)  
+{
+    .contener-pai{
+
+        max-width: 100%;
+        width: 80%;
+        margin-left: 11%;
+        margin-top: 5%;}
+
+        .listas{border: 1px solid gray;
+            display: flex;
+            flex-direction: column;
+            border-radius: 10px;
+            justify-content: center;
+            max-width: 100%;
+            width: 30%;
+            height: 400px;
+            }
+
+}
+
+@media screen and (max-width: 1200px)  
+{
+
+    .contener-pai{
+
+        max-width: 100%;
+        width: 85%;
+        margin-left: 11%;
+        margin-top: 5%;}
+
+        .listas{border: 1px solid gray;
+            display: flex;
+            flex-direction: column;
+            border-radius: 10px;
+            justify-content: center;
+            max-width: 100%;
+            width: 30%;
+            height: 400px;
+            }
+
+
+}
+
+@media screen and (max-width: 1024px)  
+{
+    .contener-pai{
+      
+        max-width: 100%;
+        width: 85%;
+        margin-left: 11%;
+        margin-top: 5%;}
+
+        .listas{border: 1px solid gray;
+            display: flex;
+            flex-direction: column;
+            border-radius: 10px;
+            justify-content: center;
+            max-width: 100%;
+            width: 55%;
+            height: 400px;
+            }
+            
+            .lista_func a {
+                display: flex;
+                height: 55px;
+            max-width: 100%;
+            padding: 15px 0px}
+
+
+}
+
+@media screen and (max-width: 670px)  
+{
+
+    .contener-pai{
+      
+        max-width: 100%;
+        width: 85%;
+        margin-left: 11%;
+        margin-top: 5%;}
+
+        .listas{border: 1px solid gray;
+            display: flex;
+            flex-direction: column;
+            border-radius: 10px;
+            justify-content: center;
+            max-width: 100%;
+            width: 55%;
+            height: 400px;
+            }
+            
+            .lista_func a {
+                display: flex;
+                height: 55px;
+            max-width: 100%;
+            padding: 15px 0px}
+
+            .mensagem-boas-vinda{
+                max-width: 100%;
+                width: 100%;
+               
+               
+                
+                font-size: 14px;}
+                input[type=submit]  {background-color: rgba(255, 115, 0, 0.867);
+                    cursor: pointer;
+                max-width: 100%;
+                width: 25%;
+                border-radius: 8px;
+                color: white;}
+
+
+}
+
+@media screen and (max-width: 555px)  
+{
+
+    .contener-pai{
+        max-width: 100%;
+        width: 85%;
+        margin-left: 11%;
+        margin-top: 5%;}
+
+        .listas{border: 1px solid gray;
+            display: flex;
+            flex-direction: column;
+            border-radius: 10px;
+            justify-content: center;
+            max-width: 100%;
+            width: 75%;
+            height: 400px;
+            }
+            
+            .lista_func a {
+            display: flex;
+            height: 55px;
+            max-width: 100%;
+            padding: 15px 0px
+            }
+
+            .lista_func a i {
+                display: flex;
+                height: 55px;
+                max-width: 100%;
+                padding: 15px 0px;
+                text-align: center;
+            
+                }
+
+            .mensagem-boas-vinda{
+                max-width: 100%;
+                width: 100%;                
+                font-size: 14px;}
+                input[type=submit]  {background-color: rgba(255, 115, 0, 0.867);
+                    cursor: pointer;
+                max-width: 100%;
+                width: 25%;
+                border-radius: 8px;
+                color: white;}
+
+  
+
+}
+
+@media screen and (max-width: 375px)  
+{
+
+    .contener-pai{
+        max-width: 100%;
+        width: 85%;
+        margin-left: 11%;
+        margin-top: 5%;
+    }
+
+        .listas{
+            border: 10px solid gray;
+            display: flex;
+            flex-direction: column;
+            border-radius: 10px;
+            justify-content: center;
+            max-width: 100%;
+            width: 200%;
+            height: 400px;
+            }
+
+            .lista_func a {
+                display: flex;
+                height: 55px;
+            max-width: 100%;
+            padding: 15px 0px}
+
+            .mensagem-boas-vinda{
+                max-width: 100%;
+                width: 100%;
+                font-size: 14px;}
+                input[type=submit]  {background-color: rgba(255, 115, 0, 0.867);
+                    cursor: pointer;
+                max-width: 100%;
+                width: 40%;
+                border-radius: 8px;
+                color: white;}
+
+  
+
+}

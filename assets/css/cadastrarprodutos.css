@@ -1,0 +1,165 @@
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8faf9;
+}
+
+li{text-decoration: none;
+    list-style: none;}
+
+
+
+/* Content Styles */
+.container {
+    flex: 1;
+    padding: 2rem;
+}
+
+.content {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.form-label {
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.form-control {
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+}
+
+.btn-primary {
+    background-color: #ff6600;
+    border: none;
+    padding: 0.5rem 1rem;
+    color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.btn-primary:hover {
+    background-color: #ff6600bc;
+}
+
+.btn-voltar {
+    background-color: #ff6600;
+    border: none;
+    padding: 0.5rem 1rem;
+    color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.btn-voltar:hover {
+    background-color: #ff6600bc;
+}
+
+.alert {
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 4px;
+    color: #fff;
+    background-color: #ff6600cb;
+}
+
+.table {
+    width: 100%;
+    margin-top: 1rem;
+    border-collapse: collapse;
+}
+
+.table th, .table td {
+    padding: 0.75rem;
+    border: 1px solid #dee2e6;
+    text-align: left;
+}
+
+.table th {
+    background-color: #f1f1f1;
+}
+
+
+
+/* Pagination Styles */
+/* .pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+.page-link {
+    padding: 0.5rem 0.75rem;
+    margin: 0 0.25rem;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+}
+
+.page-link:hover {
+    background-color: #ddd;
+} */
+
+.pagination {
+    margin: 20px 0;
+    text-align: center;
+}
+
+.pagination a {
+    margin: 0 5px;
+    padding: 8px 16px;
+    text-decoration: none;
+    background-color: #f1f1f1;
+    color: #333;
+    border-radius: 5px;
+}
+
+.pagination a.active {
+    background-color: #4caf50;
+    color: white;
+    border-radius: 5px;
+}
+
+.pagination a:hover {
+    background-color: #ddd;
+}
+
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+    }
+
+    .navbar-collapse {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    #sidebar {
+        width: 100%;
+        height: auto;
+    }
+
+    .wrapper {
+        flex-direction: column;
+    }
+
+    .container {
+        padding: 1rem;
+    }
+}
+
+
+
+  
+  

@@ -1,0 +1,182 @@
+<?php
+require_once '../../includes/conecao.php';
+require_once '../../includes/functions.php';
+
+// Inicializar a conexão com o banco de dados
+$db = new Database();
+$pdo = $db->getConnection();
+
+// Iniciar a sessão se não estiver já iniciada
+startSessionIfNotStarted();
+
+// Obter o nome do usuário da sessão
+$user_name = isset($_SESSION['user_name']) ? $_SESSION['user_name'] : 'Usuário';
+
+// Consultar todas as categorias
+$stmt_categorias = $pdo->query("SELECT id, nome FROM categorias");
+$categorias = $stmt_categorias->fetchAll(PDO::FETCH_ASSOC);
+
+// Verificar a categoria e o critério de ordenação selecionados
+$categoria_id = isset($_GET['categoria']) ? (int)$_GET['categoria'] : 2;
+$ordem = isset($_GET['ordem']) ? $_GET['ordem'] : 'nome_asc';
+
+$limit = 12;
+$page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
+$offset = ($page - 1) * $limit;
+
+// Construir a consulta SQL com base na categoria e no critério de ordenação selecionados
+$sql = "SELECT p.*, COALESCE(SUM(lv.quantidade), 0) AS vendas 
+        FROM produtos p 
+        LEFT JOIN log_vendas lv ON p.id = lv.produto_id";
+
+if ($categoria_id > 0) {
+    $sql .= " WHERE p.categoria_id = :categoria_id";
+}
+
+$sql .= " GROUP BY p.id";
+
+switch ($ordem) {
+    case 'preco_asc':
+        $sql .= " ORDER BY p.preco ASC";
+        break;
+    case 'preco_desc':
+        $sql .= " ORDER BY p.preco DESC";
+        break;
+    case 'nome_asc':
+        $sql .= " ORDER BY p.nome ASC";
+        break;
+    case 'nome_desc':
+        $sql .= " ORDER BY p.nome DESC";
+        break;
+    case 'mais_vendidos':
+        $sql .= " ORDER BY vendas DESC";
+        break;
+    default:
+        $sql .= " ORDER BY p.nome ASC";
+        break;
+}
+
+$sql .= " LIMIT :limit OFFSET :offset";
+$stmt = $pdo->prepare($sql);
+
+if ($categoria_id > 0) {
+    $stmt->bindParam(':categoria_id', $categoria_id, PDO::PARAM_INT);
+}
+
+$stmt->bindParam(':limit', $limit, PDO::PARAM_INT);
+$stmt->bindParam(':offset', $offset, PDO::PARAM_INT);
+$stmt->execute();
+$produtos = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+// Contar o total de produtos para paginação
+$sql_count = "SELECT COUNT(*) AS total FROM produtos";
+if ($categoria_id > 0) {
+    $sql_count .= " WHERE categoria_id = :categoria_id";
+}
+$stmt_count = $pdo->prepare($sql_count);
+
+if ($categoria_id > 0) {
+    $stmt_count->bindParam(':categoria_id', $categoria_id, PDO::PARAM_INT);
+}
+
+$stmt_count->execute();
+$total = $stmt_count->fetch(PDO::FETCH_ASSOC)['total'];
+$total_pages = ceil($total / $limit);
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produtos - Cachorro</title>
+
+    <!--icon-->
+    <link rel="shortcut icon" href="../../assets/image/favicon/icon-unipet.png" type="">
+
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!-- css -->
+    <link rel="stylesheet" href="../../assets/css/produtos.css">
+    <link rel="stylesheet" href="../../assets/css/paginacao.css">
+    <link rel="stylesheet" href="../../assets/css/sliderindex.css">
+    <link rel="stylesheet" href="../../assets/css/modal.css">
+    <link rel="stylesheet" href="../../assets/css/menufixo.css">
+    <link rel="stylesheet" href="../../assets/css/footer.css">
+    <link rel="stylesheet" href="../../assets/css/form-categoria.css">
+    
+</head>
+<body>
+
+    <!-- Header - Menu -->
+    <?php include_once '../../includes/headercliente.php'; ?>
+
+    <main>
+        <!-- Formulário de Filtro por Categoria e Ordenação -->
+        <form method="GET" action="../../pages/categorias/produtos_remedio.php" class="form-filtro">
+            <label for="ordem">Ordenar por:</label>
+            <select name="ordem" id="ordem" onchange="this.form.submit()">
+                <option value="nome_asc" <?php if ($ordem == 'nome_asc') echo 'selected'; ?>>A-Z</option>
+                <option value="nome_desc" <?php if ($ordem == 'nome_desc') echo 'selected'; ?>>Z-A</option>
+                <option value="preco_asc" <?php if ($ordem == 'preco_asc') echo 'selected'; ?>>Mais Baratos</option>
+                <option value="preco_desc" <?php if ($ordem == 'preco_desc') echo 'selected'; ?>>Mais Caros</option>
+                <option value="mais_vendidos" <?php if ($ordem == 'mais_vendidos') echo 'selected'; ?>>Mais Vendidos</option>
+            </select>
+        </form>
+
+        <section class="secao produto">
+            <div class="containerproduto">
+                <h2 class="h2 secao-titulo">
+                    <span class="span">Bem vindo a Terra dos Peludos</span> 🐾💕
+                </h2>
+                <?php if (count($produtos) > 0): ?>
+                <ul class="lista">
+                    <?php foreach ($produtos as $produto): ?>
+                    <li>
+                        <div class="card-produto">
+                            <div class="card-banner img-holder">
+                                <a href="../detalhesproduto.php?id=<?php echo $produto['id']; ?>">
+                                    <img src="../../uploads/<?php echo htmlspecialchars($produto['imagem']); ?>" alt="<?php echo htmlspecialchars($produto['nome']); ?>" class="img-cover default">
+                                </a>
+                            </div>
+                            <div class="card-conteudo">
+                                <h3 class="h3">
+                                    <a href="../detalhesproduto.php?id=<?php echo $produto['id']; ?>" class="card-titulo"><?php echo htmlspecialchars($produto['nome']); ?></a>
+                                </h3>
+                                <data class="card-preco">R$<?php echo number_format($produto['preco'], 2, ',', '.'); ?></data>
+                                <div class="btncomprar"><button class="comprar"><a href="../detalhesproduto.php?id=<?php echo $produto['id']; ?>">Comprar</a></button></div>
+                            </div>
+                        </div>
+                    </li>
+                    <?php endforeach; ?>
+                </ul>
+                <?php else: ?>
+                    <p class="no-products-message">Nenhum produto encontrado.</p>
+                <?php endif; ?>
+            </div>
+        </section>
+
+        <!-- Paginação -->
+        <div class="paginacao">
+            <?php if ($page > 1): ?>
+                <a href="?page=<?php echo $page - 1; ?>&categoria=<?php echo $categoria_id; ?>&ordem=<?php echo $ordem; ?>" class="page-link">&laquo; Anterior</a>
+            <?php endif; ?>
+
+            <?php for ($i = 1; $i <= $total_pages; $i++): ?>
+                <a href="?page=<?php echo $i; ?>&categoria=<?php echo $categoria_id; ?>&ordem=<?php echo $ordem; ?>" class="page-link <?php if ($i == $page) echo 'active'; ?>"><?php echo $i; ?></a>
+            <?php endfor; ?>
+
+            <?php if ($page < $total_pages): ?>
+                <a href="?page=<?php echo $page + 1; ?>&categoria=<?php echo $categoria_id; ?>&ordem=<?php echo $ordem; ?>" class="page-link">Próximo &raquo;</a>
+            <?php endif; ?>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <?php include_once '../../includes/footercliente.php'; ?>
+
+    <!-- Outros scripts -->
+    
+</body>
+</html>

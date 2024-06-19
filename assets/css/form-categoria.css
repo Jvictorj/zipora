@@ -1,0 +1,30 @@
+.form-filtro {
+    margin: 20px 0;
+    text-align: center;
+    color: #ff6200;
+}
+
+.form-filtro label {
+    font-size: 18px;
+    margin-right: 10px;
+}
+
+.form-filtro select {
+    padding: 5px 10px;
+    font-size: 16px;
+    border: 2px solid #ff6200;
+    border-radius: 5px;
+    color: var(--cor-secundaria);
+    background-color: var(--cor-primaria);
+}
+
+.no-products-message {
+    border: 3px solid ;
+    border-radius: 20px;
+    padding: 30px;
+    text-align: center;
+    font-size: 40px;
+    color: #ff6200;
+    margin-top: 20px;
+    margin-bottom: 15%;
+}

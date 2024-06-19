@@ -1,0 +1,269 @@
+
+
+
+
+
+
+@media screen and (max-width: 1680px)  
+
+{
+    .contener-pai{
+
+        max-width: 80%;
+        width: 80%;
+        margin-left: 11%;
+        margin-top: 5%;}
+
+}
+
+
+
+@media screen and (max-width: 1440px)  
+{
+    .contener-pai{
+
+        max-width: 100%;
+        width: 80%;
+        margin-left: 11%;
+        margin-top: 5%;}
+
+        .listas{border: 1px solid gray;
+            display: flex;
+            flex-direction: column;
+            border-radius: 10px;
+            justify-content: center;
+            max-width: 100%;
+            width: 30%;
+            height: 400px;
+            }
+
+}
+
+@media screen and (max-width: 1200px)  
+{
+
+    .contener-pai{
+
+        max-width: 100%;
+        width: 85%;
+        margin-left: 11%;
+        margin-top: 5%;}
+
+        .listas{border: 1px solid gray;
+            display: flex;
+            flex-direction: column;
+            border-radius: 10px;
+            justify-content: center;
+            max-width: 100%;
+            width: 30%;
+            height: 400px;
+            }
+
+
+}
+
+@media screen and (max-width: 1024px)  
+{
+    .contener-pai{
+       
+        max-width: 100%;
+        width: 85%;
+        margin-left: 11%;
+        margin-top: 5%;}
+
+        .listas{border: 1px solid gray;
+            display: flex;
+            flex-direction: column;
+            border-radius: 10px;
+            justify-content: center;
+            max-width: 100%;
+            width: 55%;
+            height: 400px;
+            }
+            
+            .lista_func a {
+                display: flex;
+              
+                height: 55px;
+            max-width: 100%;
+            padding: 15px 0px}
+
+            
+            input[type=submit]  {background-color: rgba(255, 115, 0, 0.867);
+                cursor: pointer;
+            max-width: 100%;
+            width: 25%;
+            border-radius: 8px;
+            color: white;}
+
+          
+
+            .big-box .busca {
+                align-items: center;
+            display: flex;
+            max-width: 100%;
+            gap: 2%;
+            width: 65%;}
+
+
+
+
+}
+
+@media screen and (max-width: 670px)  
+{
+
+    .contener-pai{
+      
+        max-width: 100%;
+        width: 85%;
+        margin-left: 11%;
+        margin-top: 5%;}
+
+        .listas{border: 1px solid gray;
+            display: flex;
+            flex-direction: column;
+            border-radius: 10px;
+            justify-content: center;
+            max-width: 100%;
+            width: 55%;
+            height: 400px;
+            }
+            
+            .lista_func a {
+                display: flex;
+                height: 55px;
+            max-width: 100%;
+            padding: 15px 0px}
+
+            .mensagem-boas-vinda{
+                max-width: 100%;
+                width: 100%;
+               
+               
+                
+                font-size: 14px;}
+                input[type=submit]  {background-color: rgba(255, 115, 0, 0.867);
+                    cursor: pointer;
+                max-width: 100%;
+                width: 25%;
+                border-radius: 8px;
+                color: white;}
+
+                
+            .big-box .busca {
+                align-items: center;
+            display: flex;
+            max-width: 100%;
+            gap: 2%;
+            width: 75%;}
+
+
+
+}
+
+@media screen and (max-width: 555px)  
+{
+
+    .contener-pai{
+      
+        max-width: 100%;
+        width: 85%;
+        margin-left: 11%;
+        margin-top: 5%;}
+
+        .listas{border: 1px solid gray;
+            display: flex;
+            flex-direction: column;
+            border-radius: 10px;
+            justify-content: center;
+            max-width: 100%;
+            width: 75%;
+            height: 400px;
+            }
+            
+            .lista_func a {
+                display: flex;
+                height: 55px;
+            max-width: 100%;
+            padding: 15px 0px}
+
+            .mensagem-boas-vinda{
+                max-width: 100%;
+                width: 100%;
+               
+               
+                
+                font-size: 14px;}
+                input[type=submit]  {background-color: rgba(255, 115, 0, 0.867);
+                    cursor: pointer;
+                max-width: 100%;
+                width: 45%;
+                border-radius: 8px;
+                color: white;}
+
+            
+                .big-box .busca {
+                    align-items: center;
+                display: flex;
+                max-width: 100%;
+                gap: 2%;
+                width: 85%;}
+    
+    
+
+  
+
+}
+
+@media screen and (max-width: 375px)  
+{
+
+    .contener-pai{
+       
+        max-width: 100%;
+        width: 90%;
+        margin-left: 11%;
+        margin-top: 5%;}
+
+        .listas{border: 1px solid gray;
+            display: flex;
+            flex-direction: column;
+            border-radius: 10px;
+            justify-content: center;
+            max-width: 100%;
+            width: 250%;
+            height: 400px;
+            }
+
+            .lista_func a {
+                display: flex;
+                
+                height: 55px;
+            max-width: 100%;
+            padding: 15px 0px;
+            font-size: 14px;}
+
+            .mensagem-boas-vinda{
+                max-width: 100%;
+                width: 100%;
+               
+               
+                
+                font-size: 14px;}
+                input[type=submit]  {background-color: rgba(255, 115, 0, 0.867);
+                    cursor: pointer;
+                max-width: 100%;
+                width: 75%;
+                border-radius: 8px;
+                color: white;}
+
+                .contener-newSenha{border: 1px solid gray;
+                    max-width: 100%;
+                width: 100%;}
+
+  
+
+}
+    
+

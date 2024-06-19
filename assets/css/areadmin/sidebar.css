@@ -1,0 +1,119 @@
+
+li{list-style: none;}
+
+/* Navbar Styles */
+.navbar {
+    display: none;
+    background-color: #0077ff;
+    padding: 1rem;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar-brand {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.5rem;
+}
+
+.navbar-toggler {
+    border: none;
+    background: none;
+}
+
+.navbar-toggler-icon {
+    width: 30px;
+    height: 2px;
+    background-color: #fff;
+    display: block;
+    margin: 6px 0;
+}
+
+.navbar-collapse {
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav-item {
+    list-style: none;
+    margin: 0 1rem;
+}
+
+.nav-link {
+    color: #fff;
+    text-decoration: none;
+}
+
+.nav-link.active {
+    font-weight: bold;
+}
+
+.form-logout {
+    display: inline;
+}
+
+.btn-exit {
+    background: none;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+/* Sidebar Styles */
+.wrapper {
+    display: flex;
+    width: 100%;
+}
+
+#sidebar {
+    width: 250px;
+    background: #202020;
+    color: #fff;
+    
+    padding: 1rem;
+}
+
+.sidebar-header {
+    padding: 1rem;
+    background: #202020;
+}
+
+.sidebar-header a {
+    color: #fff;
+    text-decoration: none;
+}
+
+
+
+.list-unstyled {
+    padding: 0;
+}
+
+.list-unstyled p {
+    padding: 0.5rem 18px;
+ 
+    margin: 0;
+}
+
+.list-unstyled li {
+    padding: 0.5rem 0;
+}
+
+.list-unstyled a {
+    color: #fff;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    display: block;
+}
+
+.list-unstyled a:hover {
+    color: #ff6600;
+    border-radius: 15px;
+   
+}
+
+.iconlogin {
+    cursor: pointer;
+    margin-top: 1rem;
+}

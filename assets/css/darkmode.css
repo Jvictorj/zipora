@@ -1,0 +1,26 @@
+/*-----------------------------------*\
+  DARK-MODE
+\*-----------------------------------*/
+.darkicon{cursor: pointer;}
+/*-----------------------------------*\
+VARIAVEIS DE CORES DARK MODE
+\*-----------------------------------*/
+:root {
+
+    /**/
+    --primary-color: white;
+    --secundary-color: black;
+    
+  
+   
+  }
+
+.dark-theme {
+
+    /**/
+    --primary-color: black;
+    --secundary-color: white;
+    
+  
+   
+  }

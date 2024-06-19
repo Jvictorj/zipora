@@ -1,0 +1,113 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  
+}
+
+img {max-width: 100%;}
+
+.container {
+
+ max-width: 100%;
+  display: flex;
+
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+ 
+ 
+  }
+
+  .imgcontainer{
+    max-width: 100%;
+    background-image: url(../image/erro/LAMENTAMOS-POISNAO.png) ;
+    background-position: center;
+     height: 500vh;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: auto;
+}
+
+
+  .btncontato {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .btnconosco {
+    width: 30%;
+    background-color: orangered;
+    color: white;
+    font-size: var(--fs-5);
+    border-radius: var(--radius-10);
+   
+    padding: 20px 20px;
+    border: none;
+    font: bold;
+    text-align: center;
+    cursor: pointer;
+  }
+  
+  .btnconosco:hover {opacity: 0.8;}
+  
+
+
+
+
+.container-box{ 
+
+display: flex;
+flex-direction: column;
+max-width: 100%;
+width: 60%;
+box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.327);
+border-radius: 50px;
+}
+
+h1 {
+  color: #ff6200dc;
+}
+
+
+a{
+  text-decoration: none;
+  color: #fff;
+  transition: 0,3s;
+}
+
+
+button{
+  border-radius: 100px;
+  text-align: center;
+  cursor: pointer;
+  background-color: #ff6200;
+  align-items: center;
+  border: none;
+  margin-bottom: 10px;
+}
+
+
+
+
+
+
+
+
+@media only screen and (max-width: 1200px) {
+  .container {
+      max-width: 100%;
+  }
+}
+.imgcontainer{
+  max-width: 100%;
+  background-image: url(../image/erro/LAMENTAMOS-POISNAO.png);
+  background-position: center;
+   height: 50vh;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: auto;
+}
+
